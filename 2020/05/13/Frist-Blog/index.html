@@ -214,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Frist Blog<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/Frist-Blog.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil-alt"></i></a>
+          Frist Blog
         </h1>
 
         <div class="post-meta">
@@ -668,17 +668,13 @@ window.addEventListener('pjax:success', () => {
 
   
 
-  <script src="/js/src/av-min.js"></script>
-  <script src="/js/src/Valine.min.js"></script>
-
-  
-  
-  <script src="/js/src/Valine.min.js"></script>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail';
-    guest = guest.split(',').filter(function (item) {
+    guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
@@ -689,16 +685,11 @@ window.addEventListener('pjax:success', () => {
         appKey: 'pLl7QdjFPBt2kk5f1UX3Y62c',
         placeholder: '欢迎来讨论',
         avatar:'mm',
-        guest_info:['nick'] ,
+        guest_info:guest,
         pageSize:'10' || 10,
     });
-    var infoEle = document.querySelector('#comments .info');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-      infoEle.childNodes.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
-    }
   </script>
+
 
     </div>
 </body>
